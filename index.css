@@ -14,6 +14,7 @@ span{
     padding:0;
     font-size: .7rem;
 }
+
 .wallpaper{
     background-image: url("Stellar-soluce.png");
     background-size: 1500px ;
@@ -115,7 +116,7 @@ span{
     justify-content: start;
     align-items: start;
     width: 100px;
-    position: fixed;
+    position: absolute;
     margin:0;
 }
 .legal-img{
@@ -343,29 +344,36 @@ span{
     border-right:31px solid #fed46b;
     /* triangle du 1er sous menu "Équipement..."*/
 }
-.nano-suit-content{
+h1{
     display: flex;
-    flex-direction: row;
-    width: 690px;
-    height:620px;
-    /*border:3px solid white ;*/
-    color:#fed46b;
-    transition:1s;
+    justify-content: start;
+    font-size: 2rem;
+    margin:20px 0;
+}
+h3{
+    margin:5px 0px;
+}
+p{
+    margin: 0;
 }
 .nano-suit-txt{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 300px;
     height:620;
     /*border:3px solid white ;*/
 }
-.nano-suit-title{
-    display: flex;
-}
 .nano-suit-description{
     display: flex;
+    justify-content: center;
     text-align: justify;
     margin:auto;
-
+}
+.nano-img{
+    display: flex;
+    position: absolute;
+    margin: auto;
+    width:100px;
+    height:600px;
+    margin:0 30px;
 }
