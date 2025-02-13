@@ -1,0 +1,371 @@
+body{
+    background-color: #fed46b;
+    font-family: "Rajdhani", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color:#48352a;
+}
+span{
+    margin:0;
+    padding:0;
+    font-size: .7rem;
+}
+.wallpaper{
+    background-image: url("Stellar-soluce.png");
+    background-size: 1500px ;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 1500px;
+    height:844px;
+    overflow: hidden;
+    margin: auto;
+    padding:0;
+    z-index:0;
+    /*border:1px solid blue;*/
+}
+.nav-el{
+    display: flex;
+    flex-direction: row; /* Assurez-vous que les éléments sont alignés en ligne */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    padding:0 10px;
+    margin:0 10px;
+    box-sizing: border-box;
+}
+.main-ul{
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    margin:0;
+    padding:0;
+    /*&:hover{
+        opacity: 1;
+    }
+    &:hover>li:not(:hover){
+        opacity: 0.25;
+        transform: scale(0.9);}*/
+}
+.main-li{
+    text-align: center;
+    list-style-type: none;
+    margin:0 30px;
+    padding:0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .35s;
+    border-bottom:transparent 4px solid;
+    color:#48352a;
+}
+.main-li:hover{
+    border-bottom: #48352a 4px solid;
+ }
+
+.arrow{
+    display: flex;
+    position:absolute;
+}
+.arrow-up {
+    width: 0; 
+    height: 0px; 
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    transform: rotate(315deg);
+    margin:-6px 0px 0px -26px;
+    border-bottom: 40px solid #fed46b;
+        /*triangle en haut à gauche */
+  }
+  .arrow-left {
+    width: 0; 
+    height: 0; 
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    transform: rotate(315deg);
+    margin:790px 0 0 -60px;
+    border-right:40px solid #fed46b;
+    /*triangle en bas à gauche*/
+  }
+  .arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    transform: rotate(315deg);
+    margin:810px 0px 0 1412px;
+    border-top: 40px solid #fed46b;
+    /*triangle en bas à droite */
+  }
+  .arrow-right {
+    width: 0; 
+    height: 0; 
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    margin:-26px 0 0 -60px;
+    transform: rotate(315deg);
+    border-left: 40px solid #fed46b;
+    /*triangle en haut à droite */
+  }
+  .legal{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100px;
+    position: fixed;
+    margin:0;
+}
+.legal-img{
+    display: flex;
+    background-image: url("qrcode_shiftup.co.kr copie.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    margin:690px 0 0 0;
+}
+.legal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width:180px;
+    height:100px;
+    color: #fed46b;
+    position:fixed;
+    margin:690px 0 0 100px;
+    text-shadow: 0 0 5px #000;
+    font-size: .624rem;
+}
+.content-el{
+    display:flex;
+    position: absolute;
+}
+.ue-el-main-menu {
+    color:#fed46b;
+    font-size: large;
+    font-weight: 500;
+    list-style: none;
+    margin:50px -10px ;
+    box-sizing: border-box;
+    z-index: 2;
+
+    &, a{
+        color:#fed46b;
+    }
+}
+.ue-el-main-menu-selector {
+    color:#fed46b;
+    margin:10px 0;
+    padding:5px 10px;
+    width: 250px;
+}
+.ue-el-main-menu-selector:hover{
+    background-color:#b13430 ;
+}
+.container-content{
+    display: block;
+    margin:50px 10px;
+    border: 3px solid #fed46b;
+    width: 1150px;
+    height: 744px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#background-video{
+    display: none;
+    position: absolute;
+    width: 1344px;
+    height:fit-content;
+    filter:blur(1px) grayscale(50%) opacity(55%);
+
+    @media (min-aspect-ratio: 16/9) {
+        video {
+           height: 300%;
+              top: -100%;
+        }
+      }
+      
+      @media (max-aspect-ratio: 16/9) {
+        video{
+           width: 300%;
+          left: -100%;
+        }
+      }
+}
+.submenu-arsenal{
+    display:flex;
+}
+.ue-el-submenu-arsenal{
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    background-color: #fed46b;
+    margin: 0;
+    padding: 10px 20px;
+    list-style: none;
+    width:430px;
+    height:23px;
+
+    &:hover>li:not(:hover){
+        opacity: 0.25;}
+}
+.li-el-submenu-arsenal{
+    margin:0px 20px;
+    border-bottom: 2px solid transparent;
+    transition:.35s;
+    
+&:hover{
+    border-bottom: 2px solid #48352a;
+    }
+}
+.arrow-submenu-arsenal{
+    width: 0; 
+    height: 0px; 
+    border-left: 31px solid transparent;
+    border-right: 31px solid transparent;
+    rotate:315deg;
+    margin:-5px 0 0 -20px;
+    border-bottom: 31px solid #fed46b;
+    /* triangle du 1er sous menu "exospine..."*/
+}
+.submenu-outside{
+    display:flex; /* mettre "none" || "block" pour faire disparaitre/apparaitre*/
+    /*border:10px solid white;*/
+    margin: 0;
+}
+.ue-el-submenu-outside{
+    display: flex;
+    justify-content: center;
+    background-color: #fed46b;
+    margin:0;
+    padding: 10px 20px;
+    list-style: none;
+    width:570px;
+    height: 23px;
+
+    &:hover{
+        opacity: 1;
+    }
+    &:hover>li:not(:hover){
+        opacity: 0.25;
+        }
+}
+.li-el-submenu-outside{
+    margin:0 20px;
+    border-bottom: 2px solid transparent;
+    transition:.35s;
+}
+.li-el-submenu-outside:hover{
+    border-bottom: 2px solid #48352a;
+}
+.arrow-submenu-outside{
+    width: 0; 
+    height: 0; 
+    border-top: 31px solid transparent;
+    border-bottom: 31px solid transparent; 
+    rotate:315deg;
+    margin:1px 0px 0px -5px;
+    border-right:31px solid #fed46b;
+    /* triangle du 1er sous menu "Équipement..."*/
+}
+.nano-suit{
+    display: flex;
+    margin: 20px 0;
+    padding: 0;
+    /*border:3px solid white;*/
+    width:1140px;
+    height:635px;
+    &, a{
+        color:#fed46b;
+    } 
+}
+.ue-el-menu-nano-suit{
+    display: block;
+    list-style: none;
+    color: #fed46b;
+    width: 350px;
+    height: 630px;
+    overflow-y: scroll;
+    scrollbar-color: #fed46b transparent;
+    scrollbar-width: thin;
+    margin: -40px 20px;
+    padding:10px 20px;
+}
+.li-el-menu-nano-suit{
+    background-color: #48352a;
+    margin:10px 0;
+    padding:12px 20px;
+  }
+  .li-el-menu-nano-suit:hover{
+    background-color: #b13430;
+    color: #fed46b;
+  }
+  .submenu-compagnons{
+    display:none; /* mettre "none" || "block" pour faire disparaitre/apparaitre*/
+    /*border:10px solid white;*/
+}
+.ue-el-submenu-compagnons{
+    display: flex;
+    justify-content: start;
+    background-color: #fed46b;
+    margin: 16px 0;
+    padding: 10px 20px;;
+    list-style: none;
+    width:220px;
+
+    &:hover{
+        opacity: 1;
+    }
+    &:hover>li:not(:hover){
+        opacity: 0.25;
+        }
+}
+.li-el-submenu-compagnons{
+    margin:0 20px;
+    border-bottom: 2px solid transparent;
+    transition:.35s;
+}
+.li-el-submenu-compagnons:hover{
+    border-bottom: 2px solid #48352a;
+}
+.arrow-submenu-compagnons{
+    width: 0; 
+    height: 0; 
+    border-top: 31px solid transparent;
+    border-bottom: 31px solid transparent; 
+    rotate:315deg;
+    margin:-58px 0px 00px 255px;
+    border-right:31px solid #fed46b;
+    /* triangle du 1er sous menu "Équipement..."*/
+}
+.nano-suit-content{
+    display: flex;
+    flex-direction: row;
+    width: 690px;
+    height:620px;
+    /*border:3px solid white ;*/
+    color:#fed46b;
+    transition:1s;
+}
+.nano-suit-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height:620;
+    /*border:3px solid white ;*/
+}
+.nano-suit-title{
+    display: flex;
+}
+.nano-suit-description{
+    display: flex;
+    text-align: justify;
+    margin:auto;
+
+}
