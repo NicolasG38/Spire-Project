@@ -1,10 +1,59 @@
 const container = document.getElementById("container-content")
+
+const btnExospine=document.getElementById("exospine")
+const btnGears=document.getElementById("gears")
+const btnOutside=document.getElementById("outside")
+const btnFriends=document.getElementById("friends")
+
+
+//Submenu Gears (nano-combi, équipement...)
+const submenuOutside=document.getElementById("submenu-outside")
+const ueElSubmenuOutside=document.getElementById("ue-el-submenu-outside")
+const submenOutsideNanoSuit=document.getElementById("submenu-outside-nano-suit")
+const submenuOutsideNanoFace=document.getElementById("submenu-outside-nano-face")
+const submenuOutsideNanoHairdress=document.getElementById("submenu-outside-nano-hairdress")
+const submenuOutsideNanoEarring=document.getElementById("submenu-outside-nano-earring")
+
+let nanoSuitList=document.getElementById("nano-suit-content")
+
+//sheet info Nano-suit
 const nanoSuitContent=document.getElementById("nano-suit-content")
+const btnSuits=document.getElementById("suits")
 let nanoSuitTitle=document.getElementById("nano-suit-title")
 let descriptionP=document.getElementById("description-p")
 let whereToFind=document.getElementById("wheretofind")
 let whereToFindP=document.getElementById("wheretofind-p")
 let nanoImg=document.getElementById("nano-img")
+
+
+//img nano suit
+const nanoSuit=[
+                "PNG/IMG_001.png",
+                "PNG/IMG_002.png",
+                "PNG/IMG_003.png",
+                "PNG/IMG_004.png",
+                "PNG/IMG_005.png",
+                "PNG/IMG_006.png",
+                "PNG/IMG_007.png",
+                "PNG/IMG_008.png",
+                "PNG/IMG_009.png",
+                "PNG/IMG_010.png",
+                "PNG/IMG_011.png",
+                "PNG/IMG_012.png",
+                "PNG/IMG_013.png",
+                "PNG/IMG_014.png",
+                "PNG/IMG_015.png",
+                "PNG/IMG_016.png",
+                "PNG/IMG_017.png",
+                "PNG/IMG_018.png",
+                "PNG/IMG_019.png",
+                "PNG/IMG_020.png",
+            ]
+
+
+//list of nano-suits
+
+
 
 //btn nano suit 
 const btnAliceEnsoleillee=document.getElementById("alice_ensoleillée")
@@ -17,47 +66,26 @@ const btnCombinaisonDePlongeePlanetaire2=document.getElementById("combinaison_de
 const btnCombinaisonDePlongeePlanetaire2V2=document.getElementById("combinaison_de_plongee_planetaire_2-2")
 const btnCombinaisonDePlongeePlanetaire3=document.getElementById("combinaison_de_plongee_planetaire_3")
 const btnCombinaisonDePlongeePlanetaire3V2=document.getElementById("combinaison_de_plongee_planetaire_3-2")
+const btncombinaisonDePlongeePlanetaire_7=document.getElementById("combinaison_de_plongee_planetaire_7")
+const btncombinaisonDePlongeePlanetaire_7V2=document.getElementById("combinaison_de_plongee_planetaire_7-2")
+const btncombinaisonDePlongeePlanetaire_7V3=document.getElementById("combinaison_de_plongee_planetaire_7-3")
 
-//img nano suit
-const nanoSuit=[
-                "IMG_001.png",
-                "IMG_002.png",
-                "IMG_003.png",
-                "IMG_004.png",
-                "IMG_005.png",
-                "IMG_006.png",
-                "IMG_007.png",
-                "IMG_008.png",
-                "IMG_009.png",
-                "IMG_010.png",
-                "IMG_011.png",
-                "IMG_012.png",
-                "IMG_013.png",
-                "IMG_014.png",
-                "IMG_015.png",
-                "IMG_016.png",
-                "IMG_017.png",
-                "IMG_018.png",
-                "IMG_019.png",
-                "IMG_020.png",
-            ]
+function nanoSuitContentF(a){
+    a.style.display="flex";
+    a.style.width="100%";
+    a.style.height="100%";
+    a.style.boxSizing= "border-box";
 
-function nanoSuitContentF(e){
-e.style.display="flex";
-e.style.flexDirection="row";
-e.style.margin="-30px 0";
-e.style.width="690px";
-e.style.height="630px";
 }
-
 btnAliceEnsoleillee.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Alice Ensoleillée</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Découvrez la collection de maillots de bain ensoleillée de Tetrastar C&T : partez en vacances au Pays des merveilles !</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[0]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
+nanoSuitContentF(nanoSuitContent)
+nanoSuitTitle.innerHTML=`<h1>Alice Ensoleillée</h1>`
+descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Découvrez la collection de maillots de bain ensoleillée de Tetrastar C&T : partez en vacances au Pays des merveilles !</p>`
+nanoImg.innerHTML=`<img class="nano-img" alt="" src="${nanoSuit[0]}">`
+whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
+whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
     }
+    
 )
 btnAventuriereDesTerresDésolée.addEventListener("click", function(){
     nanoSuitContentF(nanoSuitContent)
@@ -79,7 +107,6 @@ Alan de Tetrastar C&T, « Kitsune » Maria a repris sa position vacante afin de 
     whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
     }
 )
-
 btnBondageCybernétique.addEventListener("click", function(){
     nanoSuitContentF(nanoSuitContent)
     nanoSuitTitle.innerHTML=`<h1>Bondage cybernétique</h1>`
@@ -147,11 +174,29 @@ btnCombinaisonDePlongeePlanetaire3V2.addEventListener("click", function(){
     whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
     }
 )
-.addEventListener("click", function(){
+btncombinaisonDePlongeePlanetaire_7.addEventListener("click", function(){
     nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
+    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7)</h1>`
+    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Une mission prestigieuse commence. Illumine la Terre tel un phare dans la nuit. Puisses-tu forger un chemin vers l'avenir. »</p>`
+    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[10]}">`
+    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
+    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
+    }
+)
+btncombinaisonDePlongeePlanetaire_7V2.addEventListener("click", function(){
+    nanoSuitContentF(nanoSuitContent)
+    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7) V2</h1>`
     descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[0]}">`
+    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[11]}">`
+    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
+    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
+    }
+)
+btncombinaisonDePlongeePlanetaire_7V3.addEventListener("click", function(){
+    nanoSuitContentF(nanoSuitContent)
+    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7) V3</h1>`
+    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
+    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[12]}">`
     whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
     whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
     }
