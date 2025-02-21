@@ -1,9 +1,11 @@
 body{
+    
     background-color: #fed46b;
     font-family: "Rajdhani", serif;
     font-weight: 400;
     font-style: normal;
     margin: 0;
+    padding:0;
 }
 a{
     text-decoration: none;
@@ -14,34 +16,20 @@ span{
     padding:0;
     font-size: .7rem;
 }
-
-.wallpaper{
-    background-image: url("Stellar-soluce.png");
-    background-size: 1500px ;
-    background-position: center;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    width: 1500px;
-    height:844px;
-    overflow: hidden;
-    margin: auto;
-    padding:0;
-    z-index:0;
-    /*border:1px solid blue;*/
-}
 .nav-el{
     display: flex;
-    flex-direction: row; /* Assurez-vous que les éléments sont alignés en ligne */
-    justify-content: center; /* Centrer les éléments horizontalement */
-    align-items: center; /* Centrer les éléments verticalement */
-    padding:0 10px;
-    margin:0 10px;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    background-color: #fed46b;
+    padding:15px 10px;
+    margin:0;
     box-sizing: border-box;
 }
 .main-ul{
     display: flex;
-    justify-content: center; /* Centrer les éléments horizontalement */
-    align-items: center; /* Centrer les éléments verticalement */
+    justify-content: center; 
+    align-items: center; 
     margin:0;
     padding:0;
     /*&:hover{
@@ -65,193 +53,113 @@ span{
 .main-li:hover{
     border-bottom: #48352a 4px solid;
  }
-
-.arrow{
+ .legal{
     display: flex;
-    position:absolute;
-}
-.arrow-up {
-    width: 0; 
-    height: 0px; 
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    transform: rotate(315deg);
-    margin:-6px 0px 0px -26px;
-    border-bottom: 40px solid #fed46b;
-        /*triangle en haut à gauche */
-  }
-  .arrow-left {
-    width: 0; 
-    height: 0; 
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent; 
-    transform: rotate(315deg);
-    margin:790px 0 0 -60px;
-    border-right:40px solid #fed46b;
-    /*triangle en bas à gauche*/
-  }
-  .arrow-down {
-    width: 0; 
-    height: 0; 
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    transform: rotate(315deg);
-    margin:810px 0px 0 1412px;
-    border-top: 40px solid #fed46b;
-    /*triangle en bas à droite */
-  }
-  .arrow-right {
-    width: 0; 
-    height: 0; 
-    border-top: 40px solid transparent;
-    border-bottom: 40px solid transparent;
-    margin:-26px 0 0 -60px;
-    transform: rotate(315deg);
-    border-left: 40px solid #fed46b;
-    /*triangle en haut à droite */
-  }
-  .legal{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    width: 100px;
-    position: absolute;
-    margin:0;
 }
 .legal-img{
     display: flex;
     background-image: url("qrcode_shiftup.co.kr copie.png");
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: #48352a;
     width: 100px;
     height: 100px;
     position: fixed;
-    margin:690px 0 0 0;
+    bottom:20px;
+    left:20px;
 }
 .legal-content{
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
     width:180px;
-    height:100px;
+    height:90px;
     color: #fed46b;
+    background-color: #48352a;
     position:fixed;
-    margin:690px 0 0 100px;
-    text-shadow: 0 0 5px #000;
     font-size: .624rem;
+    padding:10px 5px 0px 5px;
+    bottom:20px;
+    left:120px;
 }
 .content-el{
-    display:flex;
-    position: absolute;
+    /*background-image: url("Stellar-soluce-copie.png") ;
+    background-size: contain;*/
+    display: flex;
+    margin: 50px 0 0 0;
+}
+.main-menu{
+    display: flex;
+    margin:50px 0;
+    width:300px;
+    height:auto;
+    box-sizing: border-box;
 }
 .ue-el-main-menu {
-    color:#fed46b;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#48352a;
     font-size: large;
     font-weight: 500;
     list-style: none;
-    margin:50px -10px ;
     box-sizing: border-box;
-    z-index: 2;
 
     &, a{
-        color:#fed46b;
+        color:#48352a;
     }
 }
 .ue-el-main-menu-selector {
-    color:#fed46b;
-    margin:10px 0;
+    color:#48352a;
+    margin:5px 0;
     padding:5px 10px;
     width: 250px;
+    
+    &:hover{
+        background-color:#b13430;
+        color:#fed46b;
+        cursor: pointer;
+    }
 }
-.ue-el-main-menu-selector:hover{
-    background-color:#b13430 ;
-}
-.container-content{
-    display: block;
-    margin:50px 10px;
-    border: 3px solid #fed46b;
-    width: 1150px;
-    height: 744px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-#background-video{
-    display: none;
-    position: absolute;
-    width: 1344px;
-    height:fit-content;
-    filter:blur(1px) grayscale(50%) opacity(55%);
-
-    @media (min-aspect-ratio: 16/9) {
-        video {
-           height: 300%;
-              top: -100%;
-        }
-      }
-      
-      @media (max-aspect-ratio: 16/9) {
-        video{
-           width: 300%;
-          left: -100%;
-        }
-      }
+.submenu{
+    width:100%;
+    height:46px;
+    margin:1px auto;
 }
 .submenu-arsenal{
-    display:flex;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin:0;
 }
 .ue-el-submenu-arsenal{
     display: flex;
-    justify-content: start;
-    text-align: center;
-    background-color: #fed46b;
-    margin: 0;
     padding: 10px 20px;
     list-style: none;
-    width:430px;
-    height:23px;
+    margin:0;
 
     &:hover>li:not(:hover){
         opacity: 0.25;}
 }
 .li-el-submenu-arsenal{
     margin:0px 20px;
-    border-bottom: 2px solid transparent;
     transition:.35s;
+    border-bottom: 2px solid transparent;
     
 &:hover{
     border-bottom: 2px solid #48352a;
     }
 }
-.arrow-submenu-arsenal{
-    width: 0; 
-    height: 0px; 
-    border-left: 31px solid transparent;
-    border-right: 31px solid transparent;
-    rotate:315deg;
-    margin:-5px 0 0 -20px;
-    border-bottom: 31px solid #fed46b;
-    /* triangle du 1er sous menu "exospine..."*/
-}
 .submenu-outside{
     display:flex; /* mettre "none" || "block" pour faire disparaitre/apparaitre*/
-    /*border:10px solid white;*/
+    justify-content: center;
     margin: 0;
+    cursor: pointer;
 }
 .ue-el-submenu-outside{
     display: flex;
-    justify-content: center;
-    background-color: #fed46b;
     margin:0;
     padding: 10px 20px;
     list-style: none;
-    width:570px;
-    height: 23px;
 
-    &:hover{
-        opacity: 1;
-    }
     &:hover>li:not(:hover){
         opacity: 0.25;
         }
@@ -260,89 +168,54 @@ span{
     margin:0 20px;
     border-bottom: 2px solid transparent;
     transition:.35s;
+    
+    &:hover{
+        border-bottom: 2px solid #48352a;
+
+    }
 }
-.li-el-submenu-outside:hover{
-    border-bottom: 2px solid #48352a;
-}
-.arrow-submenu-outside{
-    width: 0; 
-    height: 0; 
-    border-top: 31px solid transparent;
-    border-bottom: 31px solid transparent; 
-    rotate:315deg;
-    margin:1px 0px 0px -5px;
-    border-right:31px solid #fed46b;
-    /* triangle du 1er sous menu "Équipement..."*/
-}
-.nano-suit{
+.container-content{
     display: flex;
-    margin: 20px 0;
-    padding: 0;
-    /*border:3px solid white;*/
-    width:1140px;
-    height:635px;
-    &, a{
-        color:#fed46b;
-    } 
+    flex-direction:row;
+    width: 100%;
+    margin:40px 0 120px 310px;
+    height: auto;
+    box-sizing: border-box;
+    /*border: 3px solid #b13430;*/
+}
+.display-arsenal{
+    display: flex;
+    flex-direction: row;
+    /*border:5px solid #b13430;*/
+}
+.menu-nano-suit{
+    display: flex;
+    /*border: 5px solid #b13430;*/
 }
 .ue-el-menu-nano-suit{
-    display: block;
+    display: flex;
+    flex-direction: column;
     list-style: none;
     color: #fed46b;
     width: 350px;
-    height: 630px;
+    height: 100%;
+    max-height: 1000px;
     overflow-y: scroll;
-    scrollbar-color: #fed46b transparent;
+    scrollbar-color: #b13430 transparent;
     scrollbar-width: thin;
-    margin: -40px 20px;
+    cursor: pointer;
+    margin: auto 20px;
     padding:10px 20px;
 }
 .li-el-menu-nano-suit{
     background-color: #48352a;
-    margin:10px 0;
+    margin:3px 0;
     padding:12px 20px;
-  }
-  .li-el-menu-nano-suit:hover{
-    background-color: #b13430;
-    color: #fed46b;
-  }
-  .submenu-compagnons{
-    display:none; /* mettre "none" || "block" pour faire disparaitre/apparaitre*/
-    /*border:10px solid white;*/
-}
-.ue-el-submenu-compagnons{
-    display: flex;
-    justify-content: start;
-    background-color: #fed46b;
-    margin: 16px 0;
-    padding: 10px 20px;;
-    list-style: none;
-    width:220px;
 
-    &:hover{
-        opacity: 1;
+    &:hover  {
+        background-color: #b13430;
+        color: #fed46b;
     }
-    &:hover>li:not(:hover){
-        opacity: 0.25;
-        }
-}
-.li-el-submenu-compagnons{
-    margin:0 20px;
-    border-bottom: 2px solid transparent;
-    transition:.35s;
-}
-.li-el-submenu-compagnons:hover{
-    border-bottom: 2px solid #48352a;
-}
-.arrow-submenu-compagnons{
-    width: 0; 
-    height: 0; 
-    border-top: 31px solid transparent;
-    border-bottom: 31px solid transparent; 
-    rotate:315deg;
-    margin:-58px 0px 00px 255px;
-    border-right:31px solid #fed46b;
-    /* triangle du 1er sous menu "Équipement..."*/
 }
 h1{
     display: flex;
@@ -355,25 +228,57 @@ h3{
 }
 p{
     margin: 0;
+    width: 100%;
 }
 .nano-suit-txt{
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height:620;
-    /*border:3px solid white ;*/
+    width: 75%;
+    height:100%;
+    text-align: justify;
+    /*border:3px solid white;*/
+    box-sizing: border-box;
+}
+.nano-suit-content{
+
+    /*border:5px solid #48352a;*/
+        &, a{
+            color:#48352a;
+        } 
+    }
+.nano-suit-title{
+    display:flex;
+    flex-direction:row;
+    margin:20px 0;
 }
 .nano-suit-description{
     display: flex;
-    justify-content: center;
-    text-align: justify;
-    margin:auto;
+    justify-content: start;
+    align-content: center;
+    margin:150px 0;
+    z-index: 1;
+    /*border: 5px solid blue;*/
+}
+.nano-suit-img{
+    width: auto;
+    max-height: 100%;
+    height: 75%;
+    min-height: 50%;
+    position: absolute;
+    right:10%;
+    z-index:0;
+    /*border:5px solid #b13430;*/
 }
 .nano-img{
     display: flex;
-    position: absolute;
-    margin: auto;
-    width:100px;
-    height:600px;
-    margin:0 30px;
+    justify-content: center;
+    align-content: center;
+
+    /*background-image: url("PNG/IMG_001.png");*/
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:100%;
+    height:100%;
+    /*border:10px solid #b13430;*/
 }
