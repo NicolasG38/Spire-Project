@@ -205,233 +205,189 @@ function nanoSuitContentF(a){
 submenOutsideNanoSuit.addEventListener("click", function(){
     nanoSuitContent.style.display= "flex";
 })
-function AliceEnsoleillee(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Alice Ensoleillée</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Découvrez la collection de maillots de bain ensoleillée de Tetrastar C&T : partez en vacances au Pays des merveilles !</p>`
-    nanoImg.innerHTML=`<img class="nano-img" alt="" src="${nanoSuit[0]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-        }
-function AventuriereDesTerresDésolée(){
-            nanoSuitContentF(nanoSuitContent)
-            nanoSuitTitle.innerHTML=`<h1>Aventurière des terres désolées</h1>`
-            descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Personne ne peut vous arrêter. Traversez les zones hostiles et franchissez les obstacles avec la tenue Aventurière. Bien entendu, n'allez pas chercher de poux dans la tête des Naytibas.</p>`
-            nanoImg.innerHTML=`<img alt="" src="${nanoSuit[1]}">`
-            whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-            whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
-            }
 
-btnAliceEnsoleillee.addEventListener("click", AliceEnsoleillee)
+function createNanoSuitHandler(title, description, imgIndex, whereToFindText) {
+    return function() {
+        nanoSuitContentF(nanoSuitContent);
+        nanoSuitTitle.innerHTML = `<h1>${title}</h1>`;
+        descriptionP.innerHTML = `<p class="nano-suit-txt">${description}</p>`;
+        nanoImg.innerHTML = `<img class="nano-img" alt="" src="${nanoSuit[imgIndex]}">`;
+        whereToFind.innerHTML = `<h3>Où la trouver ?</h3>`;
+        whereToFindP.innerHTML = `<p>${whereToFindText}</p>`;
+    };
+}
 
+const nanoSuitHandlers = [
+    {
+        button: btnAliceEnsoleillee,
+        title: "Alice Ensoleillée",
+        description: "Permet de modifier l'apparence d'EVE <br><br>Découvrez la collection de maillots de bain ensoleillée de Tetrastar C&T : partez en vacances au Pays des merveilles !",
+        imgIndex: 0,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnAventuriereDesTerresDésolée,
+        title: "Aventurière des terres désolées",
+        description: "Permet de modifier l'apparence d'EVE <br><br>Personne ne peut vous arrêter. Traversez les zones hostiles et franchissez les obstacles avec la tenue Aventurière. Bien entendu, n'allez pas chercher de poux dans la tête des Naytibas.",
+        imgIndex: 1,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnBikiniDePlongeeVague,
+        title: "Bikini de plongée Vague",
+        description: "Permet de modifier l'apparence d'EVE <br><br>Suite à la disparition mystérieuse de « Galaxy » Alan de Tetrastar C&T, « Kitsune » Maria a repris sa position vacante afin de préserver les valeurs de l'entreprise. Maria a ensuite présenté « Vague », une nouvelle marque respectueuse de l'environnement axée sur la durabilité, qui n'utilise que des matériaux polymères provenant de filets de pêche recyclés. Elle a alors lancé sa collection de maillots de bain, marquant le début de l'ascension inarrêtable de sa carrière.",
+        imgIndex: 2,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnBondageCybernétique,
+        title: "Bondage cybernétique",
+        description: "Permet de modifier l'apparence d'EVE <br><br>Cette tenue de la collection « Sens exotique » a été conçue par le styliste phare de Tetrastar C&T : « Galaxy » Alan. D'après la rumeur, les fibres, la doublure et les nœuds sont constitués de nerfs quantiques qui créent un lien avec le corps et permettent une totale liberté de mouvement.",
+        imgIndex: 3,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnChaperonRougeEnsoleillee,
+        title: "Chaperon rouge ensoleillé",
+        description: "Permet de modifier l'apparence d'EVE <br><br>Découvrez la collection de maillots de bain ensoleillée de Tetrastar C&T : même le grand méchant loup ne pourra pas perturber les vacances du Chaperon rouge !",
+        imgIndex: 4,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDExplorationDOrca,
+        title: "Combinaison d'exploration d'Orca",
+        description: "Permet de modifier l'apparence d'EVE <br><br>La Combinaison d'exploration d'Orca est le fruit de la collaboration entre Tetrastar C&T et Orca Aerospace. Ce haut de compression est conçu pour être porté en dessous d'une combinaison spatiale. N'effectuez iamais de sortie dans le vide intersidéral si vous ne portez rien d'autre !",
+        imgIndex: 5,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire2,
+        title: "Combinaison de plongée planétaire (2)",
+        description: "Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. Garde à jamais la tête haute. Notre futur est entre tes mains. »",
+        imgIndex: 6,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire2V2,
+        title: "Combinaison de plongée planétaire (2) V2",
+        description: "Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. Garde à jamais la tête haute. Notre futur est entre tes mains. »",
+        imgIndex: 7,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire3,
+        title: "Combinaison de plongée planétaire (3)",
+        description: "Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. N'oublie jamais la passion qui irradie ton cœur. Notre futur est entre tes mains. »",
+        imgIndex: 8,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire3V2,
+        title: "Combinaison de plongée planétaire (3) V2",
+        description: "Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. N'oublie jamais la passion qui irradie ton cœur. Notre futur est entre tes mains. »",
+        imgIndex: 9,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire6,
+        title: "Combinaison de plongée planétaire (6)",
+        description: "Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Une mission prestigieuse commence. Illumine la Terre tel un phare dans la nuit. Puisses-tu forger un chemin vers l'avenir. »",
+        imgIndex: 10,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire_7,
+        title: "Combinaison de plongée planétaire (7)",
+        description: "Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Une mission prestigieuse commence. Illumine la Terre tel un phare dans la nuit. Puisses-tu forger un chemin vers l'avenir. »",
+        imgIndex: 11,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire_7V2,
+        title: "Combinaison de plongée planétaire (7) V2",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 12,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDePlongeePlanetaire_7V3,
+        title: "Combinaison de plongée planétaire (7) V3",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 13,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonDesEtoiles,
+        title: "Combinaison des étoiles",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 14,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCombinaisonNeurolien,
+        title: "Combinaison neurolien",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 15,
+        whereToFindText: "Combattez tous les boss du menu \"Duel de boss\" en mode normal"
+    },
+    {
+        button: btnCombinaisonOuverte,
+        title: "Combinaison ouverte",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 16,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnCybermage,
+        title: "Cybermage",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 17,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnEuphorieDuPilote,
+        title: "Euphorie du pilote",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 18,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnFilleDeLAir,
+        title: "Fille de l'Air",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 19,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnForceQuotidienne,
+        title: "Force Quotidienne",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 20,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnFrissonsDeLaVitesse,
+        title: "Frissons de la vitesse",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 21,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnHautCourtPunk,
+        title: "Haut court punk",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 22,
+        whereToFindText: "Elle se trouve dans la boutique"
+    },
+    {
+        button: btnIllusionisteCybernetique,
+        title: "Illusioniste cybernetique",
+        description: "Permet de modifier l'apparence d'EVE",
+        imgIndex: 23,
+        whereToFindText: "Elle se trouve dans la boutique"
+    }
+];
 
-
-
-
-
-
-/*btnBikiniDePlongeeVague.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Bikini de plongée Vague</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Suite à la disparition mystérieuse de « Galaxy »
-Alan de Tetrastar C&T, « Kitsune » Maria a repris sa position vacante afin de préserver les valeurs de l'entreprise. Maria a ensuite présenté
-« Vague », une nouvelle marque respectueuse de l'environnement axée sur la durabilité, qui n'utilise que des matériaux polymères provenant de filets de pêche recyclés. Elle a alors lancé sa collection de maillots de bain, marquant le début de l'ascension inarrêtable de sa carrière.</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[2]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
-    }
-)
-btnBondageCybernétique.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Bondage cybernétique</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Cette tenue de la collection « Sens exotique » a été conçue par le styliste phare de Tetrastar C&T : « Galaxy » Alan. D'après la rumeur, les fibres, la doublure et les nœuds sont constitués de nerfs quantiques qui créent un lien avec le corps et permettent une totale liberté de mouvement.</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[3]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
-    }
-)
-
-btnChaperonRougeEnsoleillee.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Chaperon rouge ensoleillé</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>Découvrez la collection de maillots de bain ensoleillée de Tetrastar C&T : même le grand méchant loup ne pourra pas perturber les vacances du Chaperon rouge !</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[4]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
-    }
-)
-
-btnCombinaisonDExplorationDOrca.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison d'exploration d'Orca</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>La Combinaison d'exploration d'Orca est le fruit de la collaboration entre Tetrastar C&T et Orca Aerospace. Ce haut de compression est conçu pour être porté en dessous d'une combinaison spatiale. N'effectuez iamais de sortie dans le vide intersidéral si vous ne portez rien d'autre !</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[5]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
-    }
-)
-
-btnCombinaisonDePlongeePlanetaire2.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (2)</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. Garde à jamais la tête haute. Notre futur est entre tes mains. »</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[6]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique </p>`
-    }
-)
-
-btnCombinaisonDePlongeePlanetaire2V2.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (2) V2</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. Garde à jamais la tête haute. Notre futur est entre tes mains. »</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[7]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDePlongeePlanetaire3.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (3)</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. N'oublie jamais la passion qui irradie ton cœur. Notre futur est entre tes mains. »</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[8]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDePlongeePlanetaire3V2.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (3) V2</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Accomplis ta mission. N'oublie jamais la passion qui irradie ton cœur. Notre futur est entre tes mains. »</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[9]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDePlongeePlanetaire6.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7)</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Une mission prestigieuse commence. Illumine la Terre tel un phare dans la nuit. Puisses-tu forger un chemin vers l'avenir. »</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[10]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDePlongeePlanetaire_7.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7)</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br>« Enfant né par une nuit étoilée. Une mission prestigieuse commence. Illumine la Terre tel un phare dans la nuit. Puisses-tu forger un chemin vers l'avenir. »</p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[11]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDePlongeePlanetaire_7V2.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7) V2</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[12]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDePlongeePlanetaire_7V3.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison de plongée planétaire (7) V3</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[13]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonDesEtoiles.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison des étoiles</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[14]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCombinaisonNeurolien.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1>Combinaison neurolien</h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[15]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Combattez tous les boss du menu "Duel de boss" en mode normal</p>`
-    }
-)
-btnCombinaisonOuverte.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[16]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnCybermage.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[17]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnEuphorieDuPilote.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[18]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnFilleDeLAir.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[19]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnForceQuotidienne.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[20]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnFrissonsDeLaVitesse.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[21]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnHautCourtPunk.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[22]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-btnIllusionisteCybernetique.addEventListener("click", function(){
-    nanoSuitContentF(nanoSuitContent)
-    nanoSuitTitle.innerHTML=`<h1></h1>`
-    descriptionP.innerHTML=`<p class="nano-suit-txt">Permet de modifier l'apparence d'EVE <br><br></p>`
-    nanoImg.innerHTML=`<img alt="" src="${nanoSuit[23]}">`
-    whereToFind.innerHTML=`<h3>Où la trouver ?</h3>`
-    whereToFindP.innerHTML=`<p>Elle se trouve dans la boutique</p>`
-    }
-)
-*/
+nanoSuitHandlers.forEach(handler => {
+    handler.button.addEventListener("click", createNanoSuitHandler(handler.title, handler.description, handler.imgIndex, handler.whereToFindText));
+});
