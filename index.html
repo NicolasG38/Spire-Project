@@ -1,54 +1,173 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Stellar Soluce</title>
         <link rel="stylesheet" type="text/css" href="index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anta&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rajdhani:wght@300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Fan-site de Stellar Blade">
+        <meta name="keywords" content="Stellar Blade, Fan-site, Stellar Soluce">
+        <meta name="author" content="Nicolas GIRARD">
+        <meta name="robots" content="index, follow">
     </head>
-    <body>
+    <body >
+        <!--<div class="background-video">
+            <video id="background-video"  autoplay loop muted >
+                <source src="https://www.stellar-blade.com/resources/front/images/main_bg.mp4">
+            </video>
+        </div>-->
+
         <header>
             <div class="logo"></div>
             <div class="nav-el">
                 <ul class="main-ul">
-                    <li class="main-li"><a href="#content-el">Main<span><br>(under construction)</span></a></li>
+                    <li class="main-li"><a href="#">Main<span><br>(under construction)</span></a></li>
                     <li class="main-li"><a href="about.html">Xion <span><br>(soon)</span></a></li>
                     <li class="main-li"><a href="contact.html">Eidos 7<span><br>(soon)</span></a></li>
-                    <li class="main-li"><a href="index.html">Eidos 9<span><br>(soon)</span></a></li>
                     <li class="main-li"><a href="about.html">Les terres désolées<span><br>(soon)</span></a></li>
                     <li class="main-li"><a href="contact.html">Le grand désert<span><br>(soon)</span></a></li>
                     <li class="main-li"><a href="contact.html">Obélisque 4<span><br>(soon)</span></a></li>
                 </ul>
             </div>
-            <div class="submenu"> 
-                    <div class="submenu-arsenal">
+            <div class="main-menu">
+                <ul>
+                    <li class="ue-el-main-menu-selector ue-el-main-menu" id="Arsenal">Arsenal ▾<span><br>(under construction)</span></li>
                         <ul class="ue-el-submenu-arsenal" id="ue-el-submenu-arsenal">
-                            <li class="li-el-submenu-arsenal" id="exospine">Exospine</li>
-                            <li class="li-el-submenu-arsenal" id="gears">Équipement<br></li>
-                            <li class="li-el-submenu-arsenal" id="outside">Extérieur</li>
-                            <li class="li-el-submenu-arsenal" id="friends">Compagnons<br></li>
+                            <li class="li-el-submenu-arsenal" id="exospine">Exospine<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal" id="gears">Équipement ▾<span><br>(under construction)</span></li>
+                            <ul class="ue-el-submenu" id="submenu-gears">
+                                <li class="li-el-submenu" id="submenu-outside-nano-suit"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Nano-combinaison</div><span><br>(under construction)</span></li>
+                                <li class="li-el-submenu" id="submenu-outside-nano-face"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Décoration de visage</div><span><br>(soon)</span></li>
+                                <li class="li-el-submenu" id="submenu-outside-nano-hairdress"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Coiffure</div><span><br>(soon)</span></li>
+                                <li class="li-el-submenu" id="submenu-outside-nano-earring"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Boucles d'oreille</div><span><br>(soon)</span></li>
+                            </ul>
+                            <li class="li-el-submenu-arsenal" id="outside">Extérieur<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal" id="friends">Compagnons ▾<span><br>(soon)</span><br></li>
+                            <ul class="ue-el-submenu" id="submenu-friends">
+                                <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Adam</div><span><br>(soon)</span></li>
+                                <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Lily</div><span><br>(soon)</span></li>
+                                <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Drone</div><span><br>(soon)</span></li>
+                            </ul>
                         </ul>
-                    </div>
-                    <div class="submenu-outside" id="submenu-outside">
-                        <ul class="ue-el-submenu-outside">
-                            <li class="li-el-submenu-outside" id="submenu-outside-nano-suit">Nano-combinaison</li>
-                            <li class="li-el-submenu-outside" id="submenu-outside-nano-face">Décoration de visage</li>
-                            <li class="li-el-submenu-outside" id="submenu-outside-nano-hairdress">Coiffure</li>
-                            <li class="li-el-submenu-outside" id="submenu-outside-nano-earring">Boucles d'oreille</li>
+                    <li class="ue-el-main-menu-selector ue-el-main-menu">Missions <span><br>(soon)</span></li>
+                    <li class="ue-el-main-menu-selector ue-el-main-menu">Carte<span><br>(soon)</span></li>
+                    <li class="ue-el-main-menu-selector ue-el-main-menu" id="skills">Compétences ▾<span><br>(soon)</span></li>
+                        <ul class="ue-el-submenu" id="submenu-skills">
+                            <li class="li-el-submenu-arsenal">Attaque<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal">ßêta<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal">Spontanée<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal">Tachy<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal">Survie<span><br>(soon)</span></li>
                         </ul>
-                    </div>
-                <div class="main-menu">
-                    <ul class="ue-el-main-menu">
-                        <li class="ue-el-main-menu-selector">Arsenal<span><br>(under construction)</span></li>
-                        <li class="ue-el-main-menu-selector">Missions <span><br>(soon)</span></li>
-                        <li class="ue-el-main-menu-selector">Carte<span><br>(soon)</span></li>
-                        <li class="ue-el-main-menu-selector">Compétences<span><br>(soon)</span></li>
-                        <li class="ue-el-main-menu-selector">Banque de données<span><br>(soon)</span></li>
-                        <li class="ue-el-main-menu-selector">Manuel<span><br>(soon)</span></li>
-                    </ul>
-                </div>    
-                    <div class="legal">
+                    <li class="ue-el-main-menu-selector ue-el-main-menu" id="database">Banque de données ▾<span><br>(soon)</span></li>
+                        <ul class="ue-el-submenu" id="submenu-database">
+                            <li class="li-el-submenu-arsenal">Cannette<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal"id="photos-challenge">Défi photo ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-photos-challenge">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Souvenirs de Xion</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Papillons des terres désolées</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Des chats dans le froid urbain</div><span><br>(soon)</span></li>
+                                </ul>
+                            <li class="li-el-submenu-arsenal" id="documents">Documents ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-memory-data">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Données</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Journaux</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Messages</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Annonces</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Séries</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Livres</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Informations</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Publicités</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Prières</div><span><br>(soon)</span></li>
+                                </ul>
+                            <li class="li-el-submenu-arsenal" id="stellar-blade">Larmes stellaires ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-stellar-blade">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Terres désolées</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Grand désert</div><span><br>(soon)</span></li>
+                                </ul>
+                            <li class="li-el-submenu-arsenal" id="passwords">Mot de passe ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-passwords">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Eidos 7</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Terres désolées</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Plateau Levoir</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Matrice 11</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Xion</div><span><br>(soon)</span></li>
+                                </ul>
+                            <li class="li-el-submenu-arsenal" id="naytibas">Naytibas ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-naytibas">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Sbires Naytibas</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Guerriers Naytibas</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Naytibas d'élite</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Naytibas alphas</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Naytibas ancestral</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Divers</div><span><br>(soon)</span></li>
+                                </ul>
+                            <li class="li-el-submenu-arsenal">Personnages<span><br>(soon)</span></li>
+                            <li class="li-el-submenu-arsenal" id="fishes">Poissons ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-fishes">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Petits</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Moyens</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Grands</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Titanesques</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Géants</div><span><br>(soon)</span></li>
+                                </ul>
+                            <li class="li-el-submenu-arsenal" id="memory-chips">Puces mémoires ▾<span><br>(soon)</span></li>
+                                <ul class="ue-el-submenu" id="submenu-memory-chips">
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Eidos 7</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Terres désolées</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Matrice 11</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Grand désert</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Eidos 9</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Obélisque 4</div><span><br>(soon)</span></li>
+                                    <li class="li-el-submenu"><div class="divsquare"><span class="square"><span class="crossW"><span class="crossH"></span></span></span>Xion</div><span><br>(soon)</span></li>
+                                </ul>
+                        </ul>
+                </ul>
+            </div>
+        
+                                    <script>
+                                    const menuItems = [
+                                        { btn: 'Arsenal', submenu: 'ue-el-submenu-arsenal' },
+                                        { btn: 'gears', submenu: 'submenu-gears' },
+                                        { btn: 'friends', submenu: 'submenu-friends' },
+                                        { btn: 'skills', submenu: 'submenu-skills' },
+                                        { btn: 'database', submenu: 'submenu-database' },
+                                        { btn: 'photos-challenge', submenu: 'submenu-photos-challenge' },
+                                        { btn: 'documents', submenu: 'submenu-memory-data' },
+                                        { btn: 'stellar-blade', submenu: 'submenu-stellar-blade' },
+                                        { btn: 'passwords', submenu: 'submenu-passwords' },
+                                        { btn: 'naytibas', submenu: 'submenu-naytibas' },
+                                        { btn: 'fishes', submenu: 'submenu-fishes' },
+                                        { btn: 'memory-chips', submenu: 'submenu-memory-chips' }
+                                    ];
+                                    
+                                    menuItems.forEach(item => {
+                                        const btn = document.getElementById(item.btn);
+                                        const submenu = document.getElementById(item.submenu);
+                                    
+                                        btn.addEventListener('click', () => {
+                                            if (submenu.style.display === 'flex') {
+                                                submenu.style.opacity = '0';
+                                                submenu.style.height = '0';
+                                                setTimeout(() => {
+                                                    submenu.style.display = 'none';
+                                                });
+                                            } else {
+                                                submenu.style.display = 'flex';
+
+
+                                                setTimeout(() => {
+                                                    submenu.style.opacity = '1';
+                                                    submenu.style.height = 'auto';
+                                                }, 10);
+                                            }
+                                        });
+                                    });
+                                    </script>
+                            <div class="legal">
                         <div class="legal-img"></div>
                         <div class ="legal-content">
                             <p>STELLAR BLADE ©️ 2024 SHIFT UP Corporation. <br>All right reserved.<br>Published by Sony Interactive Entertainment<br><br>Fan-site developed by Nicolas GIRARD</p>
@@ -146,33 +265,27 @@
                                     <li class="li-el-menu-nano-suit" id="vague_deferlante">Vague déferlante</li>
                                     <li class="li-el-menu-nano-suit" id="vague_noire">Vague noire</li>
                                 </ul>
-                                <div class="nano-suit-txt">
-                                    <h1 class="nano-suit-title" id="nano-suit-title"></h1>
-                                    <div class="nano-suit-description">
-                                        <p id="description-p"></p>
+                                <div class="nano-suits-content-el"></div>
+                                    <div class="nano-suit-txt" id="nano-suit-txt">
+                                        <h1 class="nano-suit-title" id="nano-suit-title"></h1>
+                                        <div class="nano-suit-description">
+                                            <p id="description-p"></p>
+                                        </div>
+                                        <h3 id="wheretofind"></h3>
+                                        <p id="wheretofind-p"></p>
                                     </div>
-                                    <h3 id="wheretofind"></h3>
-                                    <p id="wheretofind-p"></p>
-                                </div>
-                                <div class="nano-suit-img">
-                                    <div class="nano-img" id="nano-img"></div>
-                                </div>
-                            
-                        </div>  
+                                    <div class="nano-suit-img">
+                                        <div class="nano-img" id="nano-img"></div>
+                                    </div>
+                            </div>  
                         </div>   
- 
-                            <!--<div class="submenu-compagnons">
-                                <ul class="ue-el-submenu-compagnons">
-                                    <li class="li-el-submenu-compagnons">Adam</li>
-                                    <li class="li-el-submenu-compagnons">Lily</li>
-                                    <li class="li-el-submenu-compagnons">Drone</li>
-                                </ul>
-                                <div class="arrow-submenu-compagnons"></div>
-                            </div>-->
                     </div>
-                
+                </div>
             </div>
-        
+            <div class="cross"></div>
+            <div class="effect"></div><div class="effect1"></div> <div class="effect2"></div>
+            <div class="clouds"></div><div class="clouds-animate1"></div><div class="clouds-animate2"></div>
+            <div class="static-noise "></div>
         <script src="index.js"></script>
     </body>
 </html>
