@@ -1,0 +1,140 @@
+body{
+    background-color: #fed46b;
+    font-family: "Rajdhani", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:#48352a;
+}
+span{
+    margin:0;
+    padding:0;
+    font-size: .7rem;
+}
+
+.main-menu{
+    display: flex;
+    margin:50px 0;
+    width:300px;
+    height:auto;
+    box-sizing: border-box;
+}
+.ue-el-main-menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color:#48352a;
+    font-size: large;
+    font-weight: 500;
+    list-style: none;
+    box-sizing: border-box;
+
+    &, a{
+        color:#48352a;
+    }
+}
+.ue-el-main-menu-selector {
+    color:#48352a;
+    margin:5px 0;
+    padding:5px 10px;
+    width: 250px;
+    transition:.35s;
+    &:hover{
+        background-color:#b13430;
+        color:#fed46b;
+        cursor: pointer;
+    }
+}
+.ue-el-submenu-arsenal{
+    display: none;
+    flex-direction: column;
+    padding: 0 20px;
+    list-style: none;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    height: 0;
+    transition: opacity .6s ease-in, height 1s ease-in;
+
+    /*&:hover>li:not(:hover){
+        opacity: 0.25;}*/
+}
+.li-el-submenu-arsenal{
+    margin:5px 20px;
+    padding:5px 10px;
+    transition:.35s;
+    width: 210px;
+&:hover{
+    background-color:#48352a;
+    padding:5px 10px ;
+    color: #fed46b;
+    }
+}
+
+.ue-el-submenu{
+    display: none;
+    flex-direction: column;
+    color: #48352a;
+    margin:0;
+    width: 250px;
+    padding:0 20px;
+    list-style: none;
+    cursor: pointer;
+    opacity: 0;
+    height: 0;
+    transition: opacity .6s ease-in, height 1s ease-in;
+
+    /*&:hover>li:not(:hover){
+        opacity: 0.25;
+        }*/
+}
+.li-el-submenu{
+    margin:2px 20px;
+    padding:5px 10px;
+    border: 2px solid transparent;
+    transition:.35s;
+    width: 190px;
+    &:hover{
+        color: #b13430;
+        border:2px solid #48352a;
+        
+
+    }
+}
+
+.divsquare{
+    display: flex;
+}
+.square{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: #48352a;
+    width:20px;
+    height:20px;
+    margin: 0 10px 0 0;
+}
+
+.crossW{
+    margin: 6px 0;
+    background-color:#fed46b;
+    height:8px;
+    width: 20px;
+    border:none;
+    position: absolute;
+
+}
+
+.crossH{
+    margin:0px 0 10px 0;
+    background-color:#fed46b;
+    height:8px;
+    width: 20px;
+    border:none;
+    rotate: 90deg;
+    position: absolute;
+}
