@@ -135,6 +135,10 @@ const btnForceQuotidienne=document.getElementById("force_quotidienne")
 const btnFrissonsDeLaVitesse=document.getElementById("frissons_de_la_vitesse")
 const btnHautCourtPunk=document.getElementById("haut_court_punk")
 const btnIllusionisteCybernetique=document.getElementById("illusioniste_cybernetique")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69c9bb58a9bdb655c1bb60735f2f708aa7ea2ab1
 const btnIngenieurDOrca=document.getElementById("ingenieur_d-orca")
 const btnJeanDechireFoursecond=document.getElementById("jean_dechire_foursecond")
 const btnJeanNoirFoursecond=document.getElementById("jean_noir_foursecond")
@@ -384,6 +388,7 @@ const nanoSuitHandlers = [
         description: "Permet de modifier l'apparence d'EVE",
         imgIndex: 23,
         whereToFindText: "Elle se trouve dans la boutique"
+<<<<<<< HEAD
     },
     {
         button: btnIngenieurDOrca,
@@ -391,6 +396,8 @@ const nanoSuitHandlers = [
         description: "Permet de modifier l'apparence d'EVE",
         imgIndex: 24,
         whereToFindText: "Elle se trouve dans la boutique"
+=======
+>>>>>>> 69c9bb58a9bdb655c1bb60735f2f708aa7ea2ab1
     }
 ];
 
