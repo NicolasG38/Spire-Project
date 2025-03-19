@@ -1,0 +1,345 @@
+html{
+    z-index: 0;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bgcolor: #fed46b;
+    --bgcolor2: #fed46b;
+    --colorRed:#b13430;
+    --colorBrown:#48352a;
+    --movex: 100;
+    --movey: 100;
+    --opacity: .1;
+    --speedx: 0.16;
+    --speedy: 0.48;
+  }
+
+  .static-noise {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: url("Background/blur-y.png");
+    opacity: var(--opacity);
+    z-index: -2;
+    animation: static-noise-x calc(1s * var(--speedx)) steps(2, jump-start) infinite,
+      static-noise-y calc(1s * var(--speedy)) steps(3, jump-start) infinite;
+  }
+  
+@supports (mix-blend-mode: overlay) {
+    .static-noise {
+      mix-blend-mode: multiply;
+      opacity: var(--opacity);
+    }
+}
+  @keyframes static-noise-x {
+    100% {
+      background-position-x: calc(1px * var(--movex));
+    }
+  }
+  @keyframes static-noise-y {
+    100% {
+      background-position-y: calc(1px * var(--movey));
+    }
+  }
+  
+  
+body  {
+    font-family: "Rajdhani", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding:0;
+    display: grid;
+    box-sizing: border-box;
+    z-index: -1;
+    background: linear-gradient(var(--bgcolor), var(--bgcolor2)), var(--bgcolor);
+    &::before {
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          background: linear-gradient(var(--s2));
+          filter: url(#dither);
+          content: '';
+      transform: scale(1);
+      }
+  }
+
+/* Fond d'écran -- DÉBUT */
+
+  .effect {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: effect 15s ease-in-out infinite;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    z-index: -1;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 12%;
+        background: linear-gradient( #fa0101, #9198e5, #fa0101, #9198e5);
+        filter:  invert(75%) blur(35px) opacity(.1);
+
+    }
+}
+
+  @keyframes effect {
+    0% {
+        transform: translateY(-70%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+.effect1 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation:effect1 15s ease-in-out infinite;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: -1;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        background: linear-gradient( #0e6900, #9198e5, #fa0101, #00f7ff);
+        filter:  invert(75%) blur(15px) opacity(.1);
+    }
+}
+@keyframes effect1 {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(160%);
+    }
+}
+
+
+.effect2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation:effect1 .5s ease-in-out infinite;
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    z-index: -1;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2%;
+        background: linear-gradient( #0e6900, #9198e5, #fa0101, #00f7ff);
+        filter:  invert(75%) blur(15px) opacity(.05);
+
+    }
+}
+
+@keyframes effect2 {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.clouds{
+    background-image: url("Background/Smoke1.1.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: opacity(1);
+    z-index: -2;
+}
+
+.clouds-animate1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: moving1 120s  infinite;
+    filter: opacity(.51);
+    z-index: -2;
+    &::before {
+        background-image: url("Background/smoke-min.png");
+        background-size: cover;
+        background-repeat: repeat;
+        top:15%;
+        content: "";
+        position: absolute;
+        width: 30%;
+        height: 30%;
+    }
+}
+@keyframes moving1 {
+    0% {
+        transform: translate(0);
+    }
+    50% {
+        transform: translate(100%);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.clouds-animate2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: moving2 120s ease-in-out infinite;
+    filter: opacity(.51);
+    z-index: -2;
+    &::before {
+        background-image: url("Background/smoke2.1.png");
+        background-size: cover;
+        background-repeat: repeat;
+        bottom:0%;
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 35%;
+    }
+}
+@keyframes moving2 {
+    0% {
+        transform: translate(60%);
+    }
+    25% {
+        transform: translate(80%);
+    }
+    50% {
+        transform: translate(100%);
+    }
+    75% {
+        transform: translate(80%);
+    }
+    100% {
+        transform: translate(60%);
+    }
+}
+/* Fond d'écran -- FIN */
+
+a{
+    text-decoration: none;
+    color:#48352a;
+}
+/*DEBUT DU HEADER*/
+header{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) ;
+    grid-template-rows: repeat(4, 1fr);
+}
+header>.logo{
+    background-image: url("Background/Stellar_Blade_Logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width:500px;
+    height: 300px;
+    grid-column: 1;
+    grid-row: 1 / 4 span;
+}
+.lang{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /*background-color: #0e6900;*/
+    padding:10px;
+    grid-column: 5;
+    grid-row: 1;
+
+}
+
+header>section>#langFr{
+    background-image:url("images/Flag_of_France.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:30px;
+    height: 30px;
+    border-radius: 100%;
+    &:hover{
+        &::after{
+            content: "Français";
+        }
+    }
+}
+header>section>#langEn{
+    display: flex;
+    margin:0vh 0 0 2vw;
+    background-image:url("images/Flag_of_the_United_Kingdom_(3-5).svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:30px;
+    height: 30px;
+    border-radius: 100%;
+    &:hover{
+        &::after{
+            content: "Anglais";
+        }
+    }
+}
+.btn-contact{
+    display: flex;
+    justify-content: end;
+    /*background-color: #fa0101;*/
+    grid-column: 4;
+    grid-row: 1;
+}
+.btn-contact>button{
+    margin: 1vh;
+    width:150px;
+    height: 50px;
+    background-color: transparent;
+}
+header>nav{
+    display: flex;
+    grid-column: 2 / span 5  ;
+    grid-row: 4 ;
+}
+header>nav>ul{
+    display: flex;
+    justify-items: stretch;
+    align-items: end;
+    /*background-color: #00f7ff;*/
+}
+header>nav>ul>li{
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding:0 2.13vw;
+
+}
+/* FIN DU HEADER*/
+
+#welcome{
+    text-align: center;
+    margin:10% auto;
+    font-size:x-large ;
+}
+
+.container{
+    width: 300px;
+    height:750px;
+    border: 3px solid var(--colorRed);
+    border-radius: 25px;
+}
