@@ -20,7 +20,7 @@ html{
 
   .static-noise {
     display: block;
-    position: absolute;
+    position: fixed; /*absolute en cas de problème*/
     width: 100%;
     height: 100%;
     inset: 0;
@@ -57,6 +57,8 @@ body  {
     padding:0;
     display: grid;
     box-sizing: border-box;
+    overflow-x: hidden;
+    
     z-index: -1;
     background: linear-gradient(var(--bgcolor), var(--bgcolor2)), var(--bgcolor);
     &::before {
@@ -75,12 +77,10 @@ body  {
   .effect {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 25%;
     animation: effect 15s ease-in-out infinite;
     position: absolute;
     box-sizing: border-box;
-    overflow: hidden;
-
     z-index: -1;
     &::before {
         content: "";
@@ -104,11 +104,10 @@ body  {
 .effect1 {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 25%;
     animation:effect1 15s ease-in-out infinite;
     position: absolute;
     box-sizing: border-box;
-    overflow: hidden;
     z-index: -1;
     &::before {
         content: "";
@@ -116,7 +115,7 @@ body  {
         width: 100%;
         height: 10%;
         background: linear-gradient( #0e6900, #9198e5, #fa0101, #00f7ff);
-        filter:  invert(75%) blur(15px) opacity(.1);
+        filter: invert(75%) blur(15px) opacity(.1);
     }
 }
 @keyframes effect1 {
@@ -131,13 +130,11 @@ body  {
 
 .effect2 {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 25%;
     animation:effect1 .5s ease-in-out infinite;
     position: absolute;
     box-sizing: border-box;
-    overflow: hidden;
-
     z-index: -1;
     &::before {
         content: "";
@@ -161,12 +158,12 @@ body  {
 
 .clouds{
     background-image: url("Background/Smoke1.1.png");
-    background-size: cover;
+    background-size:cover;
     background-repeat: repeat;
     background-position: center;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     filter: opacity(1);
     z-index: -2;
 }
@@ -269,6 +266,9 @@ header>.logo{
 }
 
 header>section>#langFr{
+    display: flex;
+    justify-content: center;
+    align-items: start;
     background-image:url("images/Flag_of_France.svg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -279,11 +279,16 @@ header>section>#langFr{
     &:hover{
         &::after{
             content: "Français";
+            margin: 2em 0;
+      
+            font-weight: bold;
         }
     }
 }
 header>section>#langEn{
     display: flex;
+    justify-content: center;
+    align-items: start;
     margin:0vh 0 0 2vw;
     background-image:url("images/Flag_of_the_United_Kingdom_(3-5).svg");
     background-size: cover;
@@ -294,7 +299,9 @@ header>section>#langEn{
     border-radius: 100%;
     &:hover{
         &::after{
-            content: "Anglais";
+            content: "English";
+            margin: 2em auto;
+            font-weight: bold;
         }
     }
 }
@@ -306,11 +313,27 @@ header>section>#langEn{
     grid-row: 1;
 }
 .btn-contact>button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, .8);
     margin: 1vh;
     width:150px;
     height: 50px;
     background-color: transparent;
+    font-weight: bold;
+    border: 1px solid var(--colorRed);
+    border-radius: 15px;
+    text-shadow: 0 5px 0 rgba(177, 52, 48, .5);
+    transition: .5s ease-in-out;
+     &:hover{
+        text-shadow: 0 0 0 var(--colorRed);
+        background-color: rgba(254, 212, 107, .4);
+    }
 }
+
+
 header>nav{
     display: flex;
     grid-column: 2 / span 5  ;
@@ -336,10 +359,42 @@ header>nav>ul>li{
     margin:10% auto;
     font-size:x-large ;
 }
-
+.containers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
 .container{
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 18em;
     height:750px;
     border: 3px solid var(--colorRed);
     border-radius: 25px;
+
+}
+.container>h2{
+    text-align: center;
+    background-color: var(--colorRed);
+    color:var(--bgcolor);
+    padding: 2em 0 1.1em 0;
+    width:11.8em;
+    border-radius: 20px 20px 0 0;
+}
+.container>ul{
+margin: 3em auto 0 auto;
+overflow: scroll;
+}
+.container>ul>li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .2em auto;
+    width: 15em;
+    height:4em;
+    background-color: var(--colorBrown);
+    color:var(--bgcolor);
 }
