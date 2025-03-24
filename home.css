@@ -1,0 +1,132 @@
+/* main{display: flex;} 
+footer{display:flex} */
+
+#welcome{
+    display: flex;
+    text-align: center;
+    align-content: center;
+    margin:5% auto;
+    font-size:x-large ;
+}
+#welcome>h2{
+    z-index:1;
+    position: absolute;
+    margin: 2%;
+    text-shadow:0 5px 0px var(--colorRed);
+    color: var(--bgcolor);
+
+}
+.sb-wc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transition: 5s ease-out 5s ease-in 1s ease-in-out;
+    z-index: 0;
+  
+  }
+  .img-sb-wc{
+    object-fit: cover;
+    width: 100%;
+    height: 600px;
+    box-shadow: inset 10px 0 5px var(--colorRed);
+    filter: grayscale(60%) sepia(60%);
+}
+
+  #arrow_back{
+    position: absolute;
+    fill: var(--bgcolor);
+    width: 60px;
+    left:5%;
+    margin: 12em 0; 
+    background-color: var(--colorBrown);
+    border-radius: 100%;
+    padding:10px;
+    transition:.5s;
+    z-index: 1;
+    &:hover{
+        scale: 1.1;
+    }
+
+  }
+  #arrow_forward{
+    position: absolute;
+    fill: var(--bgcolor);
+    width: 60px;
+    right: 5%;
+    margin: 12em 0; 
+    background-color: var(--colorBrown);
+    border-radius: 100%;
+    padding:10px;
+    transition:.5s;
+    z-index: 1;
+    &:hover{
+        scale: 1.1;
+    }
+  }
+.containers{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 18em;
+    height:750px;
+    border: 3px solid var(--colorRed);
+    border-radius: 25px;
+}
+.container>h2{
+    text-align: center;
+    background-color: var(--colorRed);
+    color:var(--bgcolor);
+    padding: 2em 0 1.1em 0;
+    width:11.8em;
+    border-radius: 20px 20px 0 0;
+
+}
+.container>ul{
+margin: 3em auto 0 auto;
+overflow: scroll;
+}
+.container>ul>li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: .2em auto;
+    width: 15em;
+    height:4em;
+    background-color: var(--colorBrown);
+    color:var(--bgcolor);
+}
+
+.legal{
+    background-color: var(--colorRed);
+    display: flex;
+}
+.legal-img{
+    background-image: url("qrcode_shiftup.co.kr copie.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: var(--colorRed);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -35em;
+    right: 230px;
+}
+.legal-content{
+    width:180px;
+    height:100px;
+    color:var(--bgcolor);
+    background-color: var(--colorRed);
+    position:absolute;
+    font-size: .624rem;
+    padding:5px 5px 5px 5px;
+    bottom: -56.1em;
+    right: 50px;
+}

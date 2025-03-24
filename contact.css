@@ -1,0 +1,124 @@
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--colorRed) transparent;
+}
+
+:root {
+    --bgcontact:rgba(72, 53, 42, .9)
+}
+
+h2{
+    color: var(--colorRed);
+    font-size: 2rem;
+    margin: 1em 0;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    border: 2px solid var(--colorRed);
+    border-radius: 10px;
+    background-color: var(--bgcontact);
+}
+input, textarea{
+    background-color: var(--colorBrown);
+    color: var(--bgcolor);
+    padding: 1em;
+    font-size: 1rem;
+    &::placeholder{
+        color: var(--bgcolor);
+    }
+    &:focus{
+        outline: 2px solid var(--bgcolor);
+    }
+}
+#contact-form>div>label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1em 0;
+    color: var(--bgcolor);
+    font-weight: bold;
+}
+#contact-form>div>input{
+    width: 40vw;
+    height: 3em;
+    border-radius: 5px;
+    border: 1px solid var(--colorRed);
+}
+#contact-form>div>textarea{
+    width: 40vw;
+    max-width: 49vw;
+    height: 10vh;
+    max-height: 11vh;
+    border-radius: 5px;
+    border: 1px solid var(--colorRed);
+}
+#contact-form>button{
+    width: 80%;
+    height: 2em;
+    border-radius: 5px;
+    border: 1px solid var(--colorRed);
+    background-color: var(--colorRed);
+    color: var(--bgcolor);
+    font-weight: bold;
+    margin: 1em 0;
+    transition: .5s ease-in-out;
+}
+#contact-form>button:hover{
+    background-color: var(--bgcolor);
+    color: var(--colorRed);
+    box-shadow: 0 0 2px var(--colorRed);
+}
+
+.legal{
+    background-color: var(--colorRed);
+    display: flex;
+}
+.legal-img{
+    background-image: url("qrcode_shiftup.co.kr copie.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: var(--colorRed);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -46em;
+    right: 230px;
+}
+.legal-content{
+    width:180px;
+    height:100px;
+    color:var(--bgcolor);
+    background-color: var(--colorRed);
+    position:absolute;
+    font-size: .624rem;
+    padding:5px 5px 5px 5px;
+    bottom: -73.7em;
+    right: 50px;
+}
+
+@media screen and (max-width:1600px) {
+    
+    .contact{
+        height: 110vh;
+    }
+    
+}

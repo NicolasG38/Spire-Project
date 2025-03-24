@@ -5,6 +5,8 @@ html{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--colorRed) transparent;
 }
 :root {
     --bgcolor: #fed46b;
@@ -17,7 +19,6 @@ html{
     --speedx: 0.16;
     --speedy: 0.48;
   }
-
   .static-noise {
     display: block;
     position: fixed; /*absolute en cas de problème*/
@@ -30,7 +31,6 @@ html{
     animation: static-noise-x calc(1s * var(--speedx)) steps(2, jump-start) infinite,
       static-noise-y calc(1s * var(--speedy)) steps(3, jump-start) infinite;
   }
-  
 @supports (mix-blend-mode: overlay) {
     .static-noise {
       mix-blend-mode: multiply;
@@ -47,8 +47,6 @@ html{
       background-position-y: calc(1px * var(--movey));
     }
   }
-  
-  
 body  {
     font-family: "Rajdhani", serif;
     font-weight: 400;
@@ -58,7 +56,6 @@ body  {
     display: grid;
     box-sizing: border-box;
     overflow-x: hidden;
-    
     z-index: -1;
     background: linear-gradient(var(--bgcolor), var(--bgcolor2)), var(--bgcolor);
     &::before {
@@ -89,16 +86,14 @@ body  {
         height: 12%;
         background: linear-gradient( #fa0101, #9198e5, #fa0101, #9198e5);
         filter:  invert(75%) blur(35px) opacity(.1);
-
     }
 }
-
   @keyframes effect {
     0% {
         transform: translateY(-70%);
     }
     100% {
-        transform: translateY(100%);
+        transform: translateY(160%);
     }
 }
 .effect1 {
@@ -126,8 +121,6 @@ body  {
         transform: translateY(160%);
     }
 }
-
-
 .effect2 {
     display: flex;
     width: 100vw;
@@ -143,7 +136,6 @@ body  {
         height: 2%;
         background: linear-gradient( #0e6900, #9198e5, #fa0101, #00f7ff);
         filter:  invert(75%) blur(15px) opacity(.05);
-
     }
 }
 
@@ -152,10 +144,9 @@ body  {
         transform: translateY(0%);
     }
     100% {
-        transform: translateY(100%);
+        transform: translateY(160%);
     }
 }
-
 .clouds{
     background-image: url("Background/Smoke1.1.png");
     background-size:cover;
@@ -167,7 +158,6 @@ body  {
     filter: opacity(1);
     z-index: -2;
 }
-
 .clouds-animate1{
     width: 100%;
     height: 100%;
@@ -197,7 +187,6 @@ body  {
         transform: translate(0);
     }
 }
-
 .clouds-animate2{
     width: 100%;
     height: 100%;
@@ -241,11 +230,14 @@ a{
 }
 /*DEBUT DU HEADER*/
 header{
-    display: grid;
+    display: grid; /* gird ou none*/
     grid-template-columns: repeat(5, 1fr) ;
     grid-template-rows: repeat(4, 1fr);
 }
-header>.logo{
+#desktop-header{
+    display: none;
+}
+header>section>.logo{
     background-image: url("Background/Stellar_Blade_Logo.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -262,9 +254,7 @@ header>.logo{
     padding:10px;
     grid-column: 5;
     grid-row: 1;
-
 }
-
 header>section>#langFr{
     display: flex;
     justify-content: center;
@@ -276,12 +266,16 @@ header>section>#langFr{
     width:30px;
     height: 30px;
     border-radius: 100%;
+    &::after{
+        content: "Français";
+        margin: 2em 0;
+        font-weight: bold;
+        opacity: 0;
+        transition: .5s;
+    }
     &:hover{
         &::after{
-            content: "Français";
-            margin: 2em 0;
-      
-            font-weight: bold;
+            opacity: 1;
         }
     }
 }
@@ -297,11 +291,16 @@ header>section>#langEn{
     width:30px;
     height: 30px;
     border-radius: 100%;
+    &::after{
+        content: "English";
+        margin: 2em 0;
+        font-weight: bold;
+        opacity: 0;
+        transition: .5s;
+    }
     &:hover{
         &::after{
-            content: "English";
-            margin: 2em auto;
-            font-weight: bold;
+            opacity: 1;
         }
     }
 }
@@ -313,7 +312,7 @@ header>section>#langEn{
     grid-row: 1;
 }
 .btn-contact>button{
-    display: flex;
+    display: flex; 
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
@@ -324,77 +323,127 @@ header>section>#langEn{
     background-color: transparent;
     font-weight: bold;
     border: 1px solid var(--colorRed);
-    border-radius: 15px;
-    text-shadow: 0 5px 0 rgba(177, 52, 48, .5);
+    border-radius: 5px;
+    text-shadow: 0 6px 0 rgba(177, 52, 48, .3);
     transition: .5s ease-in-out;
      &:hover{
         text-shadow: 0 0 0 var(--colorRed);
         background-color: rgba(254, 212, 107, .4);
+        box-shadow: 0 0 2px var(--colorRed);
     }
 }
-
-
-header>nav{
+header>section>nav{
     display: flex;
+    justify-content: space-around;
     grid-column: 2 / span 5  ;
     grid-row: 4 ;
 }
-header>nav>ul{
+header>section>nav>ul{
     display: flex;
-    justify-items: stretch;
     align-items: end;
     /*background-color: #00f7ff;*/
 }
-header>nav>ul>li{
+header>section>nav>ul>li{
     display: flex;
     font-weight: bold;
     font-size: 1.2rem;
-    padding:0 2.13vw;
-
+    padding:1vh 2.13vw;
+    &:hover{
+        border-radius: 5px;
+        box-shadow: 0 0 2px var(--colorRed);
+    }
+}
+li{
+    cursor: pointer;
 }
 /* FIN DU HEADER*/
 
-#welcome{
-    text-align: center;
-    margin:10% auto;
-    font-size:x-large ;
-}
-.containers{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: center;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 18em;
-    height:750px;
-    border: 3px solid var(--colorRed);
-    border-radius: 25px;
 
-}
-.container>h2{
-    text-align: center;
-    background-color: var(--colorRed);
-    color:var(--bgcolor);
-    padding: 2em 0 1.1em 0;
-    width:11.8em;
-    border-radius: 20px 20px 0 0;
-}
-.container>ul{
-margin: 3em auto 0 auto;
-overflow: scroll;
-}
-.container>ul>li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: .2em auto;
-    width: 15em;
-    height:4em;
+footer{
     background-color: var(--colorBrown);
-    color:var(--bgcolor);
+    height: 300px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+@media screen and (max-width:768px){
+    header{
+        display:flex;
+        }
+    #dots {
+        fill: #000;
+        position: absolute;
+        right: 0;
+        top:0;
+        width: 72px;
+      }
+      #nav-mobile{
+        display: flex;
+      }
+      header>section>#logo-mobile{
+        background-image: url("Background/Stellar_Blade_Logo.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width:100px;
+        height: 75px;
+        grid-column: 1;
+    }
+    header>section>#nav-mobile{
+        display: flex;
+    }
+    header>section>#nav-mobile>ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    header>section>#nav-mobile>ul>li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5em;
+        width: 100%;
+        padding: .5em 0;
+    }
+    .btn-contact{
+        display: flex;
+        justify-content: end;
+        // background-color: #fa0101;
+        height: 13%;
+
+        }
+    #btn-contact-el{
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: rgba(0, 0, 0, .8);
+        width:90%;
+        height: 100px;
+        background-color: transparent;
+        font-weight: bold;
+        border: 1px solid var(--colorRed);
+        border-radius: 5px;
+        text-shadow: 0 6px 0 rgba(177, 52, 48, .3);
+        transition: .5s ease-in-out;
+         &:hover{
+            text-shadow: 0 0 0 var(--colorRed);
+            background-color: rgba(254, 212, 107, .4);
+            box-shadow: 0 0 2px var(--colorRed);
+        }
+    }
+    .lang{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        // background-color: #0e6900;
+        position: absolute;
+        bottom: 3em;
+        left:10em;
+    }
+    #langFr{
+        margin:0 10px;
+    }
+
 }
